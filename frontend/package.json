@@ -1,0 +1,25 @@
+{
+  "name": "erp-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env UMI_ENV=dev max dev",
+    "build": "cross-env UMI_ENV=prod max build",
+    "preview": "npm run build && max preview",
+    "lint": "eslint --ext .ts,.tsx src/ --fix"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.3.0",
+    "@ant-design/pro-components": "^2.7.0",
+    "@umijs/max": "^4.3.0",
+    "antd": "^5.20.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "cross-env": "^7.0.3",
+    "typescript": "^5.5.0"
+  }
+}
