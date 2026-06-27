@@ -1,0 +1,14 @@
+﻿{
+  "functions": {
+    "api/index.py": {
+      "runtime": "python3.12",
+      "memory": 512,
+      "maxDuration": 30,
+      "includeFiles": "backend/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.py" },
+    { "source": "/(.*)", "destination": "/frontend/$1" }
+  ]
+}
