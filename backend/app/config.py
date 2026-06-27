@@ -17,7 +17,7 @@ class Settings(BaseSettings):
 
     LOW_STOCK_THRESHOLD: int = 10
 
-    class Config:
+        def model_post_init(self, __context):`n        # Render PostgreSQL URL 兼容处理`n        if self.DATABASE_URL.startswith("postgres://"):`n            self.DATABASE_URL = self.DATABASE_URL.replace("postgres://", "postgresql+asyncpg://", 1)`n        if self.DATABASE_URL_SYNC.startswith("postgres://"):`n            self.DATABASE_URL_SYNC = self.DATABASE_URL_SYNC.replace("postgres://", "postgresql://", 1)`n`n    class Config:
         env_file = ".env"
         case_sensitive = True
 
